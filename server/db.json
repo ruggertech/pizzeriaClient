@@ -1,0 +1,29 @@
+{
+  "order": [
+    {
+      "id": 123,
+      "timeToDeliverInMinutes": 60
+    }
+  ],
+  "pizzas": [
+    {
+      "id": 1,
+      "topping": "Margherita",
+      "ingredients": [
+        "cheese",
+        "tomato sauce",
+        "pepper"
+      ],
+      "price": 5
+    },
+    {
+      "id": 2,
+      "name": "Onion",
+      "ingredients": [
+        "cheese",
+        "tomato sauce"
+      ],
+      "price": 5
+    }
+  ]
+}

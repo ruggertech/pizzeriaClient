@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import App from './App';
 
-class OrderHeader extends Component {
+class OrderSummary extends Component {
   render() {
     return (
       <div className="e-order-header">
@@ -11,4 +12,4 @@ class OrderHeader extends Component {
   }
 }
 
-export default OrderHeader;
+export default OrderSummary;

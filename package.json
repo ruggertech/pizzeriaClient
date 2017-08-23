@@ -2,6 +2,13 @@
   "name": "pizzeria",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --hot --inline --port 8080 --host 0.0.0.0",
+    "build-debug": "webpack",
+    "setup": "npm i -g webpack",
+    "build-production": "NODE_ENV=production webpack -p --progress --colors"
+  },
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -12,5 +19,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
   }
 }
