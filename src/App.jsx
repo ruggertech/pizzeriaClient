@@ -7,9 +7,15 @@ import { MuiThemeProvider } from 'material-ui';
 class App extends Component {
   static state = {};
 
-  static setState(state) {
-    this.state = state;
-    this.forceUpdate();
+  constructor() {
+    super();
+    App.state.orders = [];
+    App.state.pizzaList = [];
+  }
+
+  addOrder(order) {
+    App.state.orders.push(order);
+    this.forceUpdate()
   }
 
   render() {
@@ -17,7 +23,7 @@ class App extends Component {
       <MuiThemeProvider>
         <div className="App">
           <div className="items-list">
-            <PizzaList></PizzaList>
+            <PizzaList addOrder={this.addOrder.bind(this)}></PizzaList>
           </div>
           <div className="my-order-wrapper">
             <OrderSummary></OrderSummary>
