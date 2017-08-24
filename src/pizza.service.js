@@ -1,27 +1,40 @@
 class PizzaService {
   getPizzaList() {
-    // TODO: replace this with an actual remote call
-    return {
-      "pizzas": [
-        {
-          "id":          1,
-          "topping":     "Margherita",
-          "ingredients": [
-            "cheese", "tomato sauce"
-          ],
-          "price":       5
-        },
-        {
-          "id":          2,
-          "topping":        "Onion",
-          "ingredients": [
-            "cheese", "tomato sauce"
-          ],
-          "price":       7
-        }
-
-      ]
+    const options = {
+      method:             'GET',
+      url:                'http://localhost:3004/pizzas',
+      responseType:       "JSON",
+      returnFullResponse: true
     };
+
+    return fetch(options.url, options).then(res => {
+      return PizzaService.getResponseBody(res, true).then(body => {
+        return body;
+      });
+    })
+      .catch(function() {
+        console.log("Booo");
+      });
+  }
+
+  static getResponseBody(response, parseToJson) {
+    return response.text().then((text) => {
+
+      if (!parseToJson) {
+        return text;
+      }
+
+      let json = {};
+      if (text) {
+        try {
+          json = JSON.parse(text);
+        } catch (e) {
+          console.error("FetchService.handleResponse: could not parse response ", text, "as json ", e);
+        }
+      }
+
+      return json;
+    });
   }
 
 }

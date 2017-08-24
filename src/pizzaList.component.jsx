@@ -8,9 +8,14 @@ class PizzaList extends React.Component {
 
   componentWillMount() {
     // call the service to load pizza list
-    App.state.pizzaList = PizzaService.getPizzaList().pizzas;
-    const pizzaList = PizzaService.getPizzaList().pizzas;
-    App.state = ({ ...App.state, pizzaList });
+    let pizzaList = [];
+
+    PizzaService.getPizzaList().then((ret) => {
+      pizzaList = ret;
+      console.log('componentWillMount: ', pizzaList);
+      App.state = ({ ...App.state, pizzaList });
+      this.forceUpdate();
+    });
   }
 
   render() {

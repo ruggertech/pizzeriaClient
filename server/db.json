@@ -1,5 +1,5 @@
 {
-  "order": [
+  "orders": [
     {
       "id": 123,
       "timeToDeliverInMinutes": 60
@@ -14,7 +14,8 @@
         "tomato sauce",
         "pepper"
       ],
-      "price": 5
+      "price": 5,
+      "img": "someimgurl"
     },
     {
       "id": 2,
@@ -23,7 +24,8 @@
         "cheese",
         "tomato sauce"
       ],
-      "price": 5
+      "price": 7,
+      "img": "someurl"
     }
   ]
 }
