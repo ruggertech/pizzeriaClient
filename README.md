@@ -5,4 +5,4 @@ Make sure you install a local webserver based on a json file:
 To run the projec use:
 1.  run "npm install" in the project directory. 
 2.  run the json server:  "json-server --watch ./server/db.json --port 3004"
-2.  run the project use: "npm start"
+3.  run the project use: "npm start"
