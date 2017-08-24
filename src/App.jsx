@@ -7,6 +7,11 @@ import { MuiThemeProvider } from 'material-ui';
 class App extends Component {
   static state = {};
 
+  static setState(state) {
+    this.state = state;
+    this.forceUpdate();
+  }
+
   render() {
     return (
       <MuiThemeProvider>
