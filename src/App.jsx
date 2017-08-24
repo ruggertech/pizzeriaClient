@@ -11,10 +11,13 @@ class App extends Component {
     super();
     App.state.orders = [];
     App.state.pizzaList = [];
+    App.state.orderTotal = 0;
   }
 
   addOrder(order) {
     App.state.orders.push(order);
+    App.state.orderTotal = App.state.orderTotal + order.price;
+    console.log('addOrder: ', order.price);
     this.forceUpdate()
   }
 

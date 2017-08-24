@@ -17,7 +17,7 @@ class PizzaService {
           "ingredients": [
             "cheese", "tomato sauce"
           ],
-          "price":       5
+          "price":       7
         }
 
       ]

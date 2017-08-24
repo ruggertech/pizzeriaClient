@@ -6,10 +6,12 @@ class OrderSummary extends Component {
   render() {
     return (
       <div className="e-order-summary">
+        <div className="e-order-list">
         {App.state && App.state.orders && App.state.orders.map(ord => {
-          console.log('here: ');
           return JSON.stringify(ord);
         })}
+        </div>
+        <div className="e-order-total">Total: {App.state.orderTotal || 0}</div>
       </div>
     );
   }
