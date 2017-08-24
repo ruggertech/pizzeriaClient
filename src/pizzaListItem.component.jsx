@@ -10,12 +10,20 @@ class PizzaListItem extends React.Component {
 
   render() {
     return (
-      <span className="e-pizza-list-item-wrapper">
-        {JSON.stringify(this.props.pizza)}
-            <FlatButton id={this.props.pizza.id} label="Add"
-                        primary={true}
-                        onClick ={this.handleAddToOrder.bind(this)}/>
-      </span>
+      <div className="e-pizza-list-item-wrapper">
+        <img src={this.props.pizza.img} title={this.props.pizza.topping} alt={this.props.pizza.topping}/>
+        <div>
+          <p>Pizza: {this.props.pizza.topping}</p>
+          <p>Price: {this.props.pizza.price}$</p>
+          <p>Ingredients: {this.props.pizza.ingredients.join(", ")}</p>
+
+          <FlatButton id={this.props.pizza.id} label="Add"
+                      primary={false}
+                      onClick={this.handleAddToOrder.bind(this)}
+                      backgroundColor="red"
+          textColor="white"/>
+        </div>
+      </div>
     );
   }
 }
