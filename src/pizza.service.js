@@ -11,10 +11,35 @@ class PizzaService {
       return PizzaService.getResponseBody(res, true).then(body => {
         return body;
       });
-    })
-      .catch(function() {
-        console.log("Booo");
+    }).catch(function() {
+      console.log("Booo");
+    });
+  }
+
+  placeOrder(orderDetails) {
+    const body = {
+      "timeToDeliverInMinutes": Math.random() * (60 - 5) + 5,
+      "orderDetails":           orderDetails
+    };
+
+    const options = {
+      method:              'POST',
+      url:                 'http://localhost:3004/orders',
+      responseType:        "JSON",
+      header: {
+        contentType: "application/json"
+      },
+      body: JSON.stringify(body),
+      returnFullResponse:  true,
+    };
+
+    return fetch(options.url, options, options.responseType, true).then(res => {
+      return PizzaService.getResponseBody(res, true).then(body => {
+        return body;
       });
+    }).catch(function() {
+      console.log("Booo");
+    });
   }
 
   static getResponseBody(response, parseToJson) {
@@ -36,7 +61,6 @@ class PizzaService {
       return json;
     });
   }
-
 }
 
 export default new PizzaService();

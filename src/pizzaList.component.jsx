@@ -12,7 +12,6 @@ class PizzaList extends React.Component {
 
     PizzaService.getPizzaList().then((ret) => {
       pizzaList = ret;
-      console.log('componentWillMount: ', pizzaList);
       App.state = ({ ...App.state, pizzaList });
       this.forceUpdate();
     });

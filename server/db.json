@@ -2,7 +2,22 @@
   "orders": [
     {
       "id": 123,
-      "timeToDeliverInMinutes": 60
+      "timeToDeliverInMinutes": 60,
+      "orderDetails": {
+        "id": 1,
+        "topping": "Margherita",
+        "ingredients": [
+          "cheese",
+          "tomato sauce",
+          "pepper"
+        ],
+        "price": 5,
+        "img": "https://mediacdn.dominos.co.il/_media/deals/9917002-big.png",
+        "amount": 2
+      }
+    },
+    {
+      "id": 124
     }
   ],
   "pizzas": [

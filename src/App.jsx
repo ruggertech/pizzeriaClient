@@ -9,16 +9,22 @@ class App extends Component {
 
   constructor() {
     super();
-    App.state.orders = [];
-    App.state.pizzaList = [];
-    App.state.orderTotal = 0;
+    App.state.orderDetails = [];
+    App.state.pizzaList    = [];
+    App.state.orderTotal   = 0;
   }
 
   addOrder(order) {
-    App.state.orders.push(order);
+    const pizzaToOrder = App.state.orderDetails.filter(existingOrder => existingOrder.id === order.id);
+    if(pizzaToOrder && pizzaToOrder.length > 0) {
+      pizzaToOrder[0].amount = pizzaToOrder[0].amount + 1;
+    } else {
+      order.amount = 1;
+      App.state.orderDetails.push(order);
+    }
+
     App.state.orderTotal = App.state.orderTotal + order.price;
-    console.log('addOrder: ', order.price);
-    this.forceUpdate()
+    this.forceUpdate();
   }
 
   render() {

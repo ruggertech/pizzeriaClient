@@ -29,6 +29,10 @@
     border: solid;
 }
 
+.e-pizza-list-item-wrapper:hover .e-pizza-price {
+    display: block;
+}
+
 .e-pizza-list-item-wrapper img {
     width: 600px;
     height: 400px;
@@ -53,6 +57,15 @@
     border-bottom: solid;
     margin-bottom: 30px;
     border-width: thin;
+}
+
+.e-order-place-order {
+    padding-top: 50px;
+    border-width: thin;
+}
+
+.e-pizza-price {
+    display: none;
 }
 
 @keyframes App-logo-spin {
