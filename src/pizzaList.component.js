@@ -2,6 +2,7 @@ import React from 'react';
 import App from './App';
 import './App.css';
 import PizzaService from './pizza.service';
+import PizzaListItem from './pizzaListItem.component';
 
 class PizzaList extends React.Component {
 
@@ -12,15 +13,12 @@ class PizzaList extends React.Component {
 
   render() {
     console.log(JSON.stringify(App.state));
-
     return (
-      <div className="e-order-header">
+      <div className="e-pizza-list-wrapper">
         <ul>
-          <li>
-            {App.state.pizzaList && App.state.pizzaList.map(pizza =>
-              <span key={pizza.id}>{pizza.topping}</span>
-            )}
-          </li>
+          {App.state.pizzaList && App.state.pizzaList.map(pizza => {
+            return <li key={pizza.id}><PizzaListItem pizza={pizza} /></li>
+          })}
         </ul>
       </div>
     );

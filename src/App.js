@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
-import OrderSummary from './OrderSummary.component';
-import PizzaList from './PizzaList.component';
+import OrderSummary from './orderSummary.component';
+import PizzaList from './pizzaList.component';
+import { MuiThemeProvider } from 'material-ui';
 
 class App extends Component {
   static state = {};
 
   render() {
     return (
-      <div className="App">
-
-        <div className="items-list">
-          <PizzaList></PizzaList>
+      <MuiThemeProvider>
+        <div className="App">
+          <div className="items-list">
+            <PizzaList></PizzaList>
+          </div>
+          <div className="my-order-wrapper">
+            <OrderSummary></OrderSummary>
+          </div>
         </div>
-        <div className="my-order-wrapper">
-          <OrderSummary></OrderSummary>
-        </div>
-      </div>
+      </MuiThemeProvider>
 
     );
   }

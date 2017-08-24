@@ -13,7 +13,7 @@ class PizzaService {
         },
         {
           "id":          2,
-          "name":        "Onion",
+          "topping":        "Onion",
           "ingredients": [
             "cheese", "tomato sauce"
           ],
