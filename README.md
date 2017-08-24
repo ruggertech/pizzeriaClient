@@ -12,5 +12,5 @@ To run the project use:
 2.  run the json server:  "json-server --watch ./server/db.json --port 3004"
 3.  run the project use: "npm start"
 
-![Alt text](/public/pizzeriaFrontendScreenshot.png.jpg?raw=true "Screenshot")
+![Pizzaria app screenshot](./public/pizzeriaFrontendScreenshot.png.jpg?raw=true "Screenshot")
 
