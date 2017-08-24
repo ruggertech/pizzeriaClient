@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
 }
 
 .App-logo {
@@ -11,12 +10,17 @@
 }
 
 .my-order-wrapper {
-    padding: 20px;
     width: 35%;
+
+    padding: 30px;
+    margin: 20px;
+    border: solid;
+
 }
 
 .items-list {
     font-size: large;
+    align-items: center;
 }
 
 .e-pizza-list-item-wrapper {
@@ -37,6 +41,18 @@
 
 .e-pizza-list-wrapper li {
     list-style: none;
+}
+
+.e-order-total {
+    border-top: solid;
+    padding-top: 10px;
+    border-width: thin;
+}
+
+.e-order-list-title {
+    border-bottom: solid;
+    margin-bottom: 30px;
+    border-width: thin;
 }
 
 @keyframes App-logo-spin {
